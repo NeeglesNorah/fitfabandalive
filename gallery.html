@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Fit & Fab Alive by Queen Iwo</title>
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - Tailwind CSS CDN
+  -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Catamaran:wght@600;700;800;900&family=Rubik:wght@400;500;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    .masonry-item {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      -webkit-column-break-inside: avoid;
+    }
+    
+    /* Image Preview Modal Styles */
+    .image-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      overflow: auto;
+      animation: fadeIn 0.3s;
+    }
+    
+    .image-modal.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    
+    .image-modal-content {
+      position: relative;
+      max-width: 90%;
+      max-height: 90vh;
+      animation: zoomIn 0.3s;
+    }
+    
+    .image-modal-close {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      font-size: 40px;
+      font-weight: bold;
+      color: white;
+      cursor: pointer;
+      transition: color 0.3s;
+      z-index: 1001;
+    }
+    
+    .image-modal-close:hover {
+      color: #ccc;
+    }
+    
+    .image-modal img {
+      max-width: 100%;
+      max-height: 90vh;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+      border-radius: 8px;
+    }
+    
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes zoomIn {
+      from {
+        transform: scale(0.8);
+        opacity: 0;
+      }
+      to {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+  </style>
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
+        <span class="span">Fit & Fab Alive</span>
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="nav-close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-sharp" aria-hidden="true"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="index.html" class="navbar-link" data-nav-link>Home</a>
+          </li>
+
+          <li>
+            <a href="about.html" class="navbar-link" data-nav-link>About Us</a>
+          </li>
+
+          <li>
+            <a href="gallery.html" class="navbar-link active" data-nav-link>Gallery</a>
+          </li>
+
+          <li>
+            <a href="free-resources.html" class="navbar-link" data-nav-link>Resources</a>
+          </li>
+
+         
+
+          <li>
+            <a href="contact.html" class="navbar-link" data-nav-link>Contact Us</a>
+          </li>
+
+        </ul>
+
+      </nav>
+
+      <a href="https://wa.me/2348023226519" class="btn btn-secondary" target="_blank" rel="noopener noreferrer">Join Now</a>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+      <!-- 
+        - #GALLERY HERO
+      -->
+
+      <section class="section hero bg-dark has-after has-bg-image" id="home" aria-label="hero" data-section
+        style="background-image: url('./assets/images/hero-bg.png'); padding-top: 120px;">
+        <div class="container">
+
+          <div class="hero-content" style="max-width: 100%; text-align: start;">
+
+            <p class="hero-subtitle">
+              <strong class="strong">Video</strong>Gallery
+            </p>
+
+            <h1 class="h1 hero-title">Watch & Learn</h1>
+
+            <p class="section-text">
+              Explore our collection of faith-based wellness videos, transformation stories, and practical tips for holistic living.
+            </p>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #MASONRY GALLERY
+      -->
+
+      <section class="py-16 bg-gradient-to-br from-gray-50 to-white">
+        <div class="container">
+
+        
+
+          <div class="columns-2 md:columns-3 lg:columns-4 gap-6 md:gap-8" style="column-fill: balance;">
+            
+            <!-- Video 1 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <div class="relative pb-[56.25%] h-0 overflow-hidden bg-gray-900 rounded-xl">
+                <iframe 
+                  class="absolute top-0 left-0 w-full h-full rounded-xl group-hover:scale-105 transition-transform duration-300"
+                  src="https://www.youtube.com/embed/anFtGGVq2Oo" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+
+            <!-- Image 1 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/_MG_2429.JPG" alt="Wellness inspiration">
+            </div>
+
+            <!-- Video 2 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <div class="relative pb-[75%] h-0 overflow-hidden bg-gray-900 rounded-xl">
+                <iframe 
+                  class="absolute top-0 left-0 w-full h-full rounded-xl group-hover:scale-105 transition-transform duration-300"
+                  src="https://www.youtube.com/embed/ZGG2LzV1kKM" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+
+            <!-- Image 2 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/5.JPG" alt="Fitness transformation">
+            </div>
+
+            <!-- Video 3 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <div class="relative pb-[56.25%] h-0 overflow-hidden bg-gray-900 rounded-xl">
+                <iframe 
+                  class="absolute top-0 left-0 w-full h-full rounded-xl group-hover:scale-105 transition-transform duration-300"
+                  src="https://www.youtube.com/embed/Zt0VYcnYnsM" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+
+            <!-- Image 3 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DSC_1099.jpg" alt="Nutrition guidance"'./assets/images/gallery/DSC_1099.jpg', 'QueenIwo is an exceptional wellness coach. Her approach is both personalized and holistic. As someone constantly on the go, her support has helped me develop habits I can maintain even when travelling or working long hours.', 'Bridget Elesin', 'Maxwell Team Member, Marriage & Family Life Practitioner', './assets/images/VIP Testimonial Pictures/Bridget Elesin.jpg')">
+            </div>
+
+            <!-- Image 4 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DSC_1109.jpg" alt="Community support"'./assets/images/gallery/DSC_1109.jpg', 'QueenIwo is one of the best in the field. She has a wealth of knowledge and expertise, and is able to apply this knowledge to help clients achieve their goals.', 'Ezekiel Solesi', 'CEO Limb Simple (Forbes Council Coach)', './assets/images/VIP Testimonial Pictures/Ezekiel Solesi.jpeg')">
+            </div>
+
+            <!-- Video 4 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <div class="relative pb-[75%] h-0 overflow-hidden bg-gray-900 rounded-xl">
+                <iframe 
+                  class="absolute top-0 left-0 w-full h-full rounded-xl group-hover:scale-105 transition-transform duration-300"
+                  src="https://www.youtube.com/embed/1DGQ22-qJzk" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+
+            <!-- Image 5 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DSC_1117.jpg" alt="Faith & wellness"'./assets/images/gallery/DSC_1117.jpg', 'My experience working with QueenIwo has been truly life-changing, especially during the pandemic. As a C-Suite executive who often put work before health, under her guidance I\'ve been able to prioritize my physical, mental, and emotional health like never before.', 'Modupe Akintola', 'Foreign Affairs Executive', './assets/images/VIP Testimonial Pictures/Modupe Akinola.jpg')">
+            </div>
+
+            <!-- Image 6 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DSC_1119.jpg" alt="Holistic living"'./assets/images/gallery/DSC_1119.jpg', 'I started with 106Kg and ended with 83Kg - a loss of 23kg! What I love most is that it can be done in the comfort of your home. The programme presents weight loss as building a healthy lifestyle.', 'Janice Egbudum', 'Lost 23kg', '')">
+            </div>
+
+            <!-- Video 5 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <div class="relative pb-[56.25%] h-0 overflow-hidden bg-gray-900 rounded-xl">
+                <iframe 
+                  class="absolute top-0 left-0 w-full h-full rounded-xl group-hover:scale-105 transition-transform duration-300"
+                  src="https://www.youtube.com/embed/CUH9cm2mR5w" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+
+            <!-- Image 7 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DSC_7025.jpg" alt="Transformation story"'./assets/images/gallery/DSC_7025.jpg', 'I lost 7kg and 3 inches around my waistline. I never exercised before, but now I\'m used to at least 20 minutes workout daily. I\'ve also included veggies and fruits in my meals which I never did before.', 'Enitan Rufai', 'Lost 7kg & 3 inches', '')">
+            </div>
+
+            <!-- Video 6 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <div class="relative pb-[56.25%] h-0 overflow-hidden bg-gray-900 rounded-xl">
+                <iframe 
+                  class="absolute top-0 left-0 w-full h-full rounded-xl group-hover:scale-105 transition-transform duration-300"
+                  src="https://www.youtube.com/embed/uDrxxL1OWQU" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+
+            <!-- Image 8 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DSC_7051.jpg" alt="Wellness journey"'./assets/images/gallery/DSC_7051.jpg', 'The only exercise I knew was sleeping before the weight loss challenge. I\'ve made lifestyle changes: eating smaller quantities, no longer skipping meals, exercising daily, and balancing nutritional contents.', 'Esther Eshiet', 'Lost 11kg, maintained for 6 months', '')">
+            </div>
+
+            <!-- Image 9 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DSC_9127.jpg" alt="Community support"'./assets/images/gallery/DSC_9127.jpg', 'The program was a real eye opener. The classes are really educative. Losing weight doesn\'t have to be stressful - it\'s more about having a lifestyle that can be maintained.', 'Faderemi', 'Lost 6.4kg', '')">
+            </div>
+
+            <!-- Video 7 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <div class="relative pb-[75%] h-0 overflow-hidden bg-gray-900 rounded-xl">
+                <iframe 
+                  class="absolute top-0 left-0 w-full h-full rounded-xl group-hover:scale-105 transition-transform duration-300"
+                  src="https://www.youtube.com/embed/ZGG2LzV1kKM" 
+                  title="YouTube video player" 
+                  frameborder="0" 
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                  allowfullscreen>
+                </iframe>
+              </div>
+            </div>
+
+            <!-- Gallery Image 10 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DSC_9127(1).jpg" alt="Gallery image"'./assets/images/gallery/DSC_9127(1).jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 11 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DSC_9136.jpg" alt="Gallery image"'./assets/images/gallery/DSC_9136.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 12 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DSC_9147.jpg" alt="Gallery image"'./assets/images/gallery/DSC_9147.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 13 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DSC_9148.jpg" alt="Gallery image"'./assets/images/gallery/DSC_9148.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 14 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DSC_9148(1).jpg" alt="Gallery image"'./assets/images/gallery/DSC_9148(1).jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 15 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DSC_9167.jpg" alt="Gallery image"'./assets/images/gallery/DSC_9167.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 16 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DSC_9458.jpg" alt="Gallery image"'./assets/images/gallery/DSC_9458.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 17 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DSC_9473.jpg" alt="Gallery image"'./assets/images/gallery/DSC_9473.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 18 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DSC_9473(1).jpg" alt="Gallery image"'./assets/images/gallery/DSC_9473(1).jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 19 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DAGREATDAN-7215.jpg" alt="Gallery image"'./assets/images/gallery/DAGREATDAN-7215.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 20 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DAGREATDAN-7215-1.jpg" alt="Gallery image"'./assets/images/gallery/DAGREATDAN-7215-1.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 21 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DAGREATDAN-7217.jpg" alt="Gallery image"'./assets/images/gallery/DAGREATDAN-7217.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 22 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DAGREATDAN-7229.jpg" alt="Gallery image"'./assets/images/gallery/DAGREATDAN-7229.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 23 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/DAGREATDAN-7231.jpg" alt="Gallery image"'./assets/images/gallery/DAGREATDAN-7231.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 24 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/20240713_143242.jpg" alt="Gallery image"'./assets/images/gallery/20240713_143242.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 25 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/20240713_143626.jpg" alt="Gallery image"'./assets/images/gallery/20240713_143626.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 26 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/20240713_143759.jpg" alt="Gallery image"'./assets/images/gallery/20240713_143759.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 27 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/FB_IMG_1709072245994.jpg" alt="Gallery image"'./assets/images/gallery/FB_IMG_1709072245994.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 28 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/FB_IMG_1709072308451.jpg" alt="Gallery image"'./assets/images/gallery/FB_IMG_1709072308451.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 29 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/FB_IMG_1709072315901.jpg" alt="Gallery image"'./assets/images/gallery/FB_IMG_1709072315901.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 30 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/30930173_411941229216507_1757786533496094720_n.jpg" alt="Gallery image"'./assets/images/gallery/30930173_411941229216507_1757786533496094720_n.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 32 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/84348363_555099941769178_3245411343001320797_n.jpg" alt="Gallery image"'./assets/images/gallery/84348363_555099941769178_3245411343001320797_n.jpg', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 33 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/55f2650e2ef04764a3d44d0dfbc18977_367410450_306287621927499_3525637246857917067_n.webp" alt="Gallery image"'./assets/images/gallery/55f2650e2ef04764a3d44d0dfbc18977_367410450_306287621927499_3525637246857917067_n.webp', '', '', '', '')">
+            </div>
+
+            <!-- Gallery Image 34 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/gallery/c66ea1a41dd44b6d9c373ab2f522a77f_367686655_1058349761822534_7909497304661315941_n.webp" alt="Gallery image"'./assets/images/gallery/c66ea1a41dd44b6d9c373ab2f522a77f_367686655_1058349761822534_7909497304661315941_n.webp', '', '', '', '')">
+            </div>
+
+          </div>
+
+          <div class="text-center mt-16">
+            <a href="https://www.youtube.com/@FitFabAndAlive" target="_blank" rel="noopener noreferrer" class="inline-flex items-center bg-orange-600 hover:bg-orange-700 text-white font-semibold py-4 px-8 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+              <ion-icon name="logo-youtube" class="text-2xl mr-3"></ion-icon>
+              View All Videos on YouTube
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #TRANSFORMATION GALLERY
+      -->
+
+      <section class="py-16 bg-gradient-to-br from-white to-gray-50">
+        <div class="container">
+
+          <div class="text-center mb-12">
+            <h2 class="h2 section-title mb-4">Transformation Stories</h2>
+            <p class="section-text max-w-2xl mx-auto">
+              Real results from real people. See how our community has transformed their lives through faith-based wellness and healthy living.
+            </p>
+          </div>
+
+          <div class="columns-2 md:columns-3 lg:columns-4 gap-6 md:gap-8" style="column-fill: balance;">
+            
+            <!-- Transformation Image 1 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/BA 1.png" alt="Transformation Story">
+            </div>
+            
+            <!-- Transformation Image 2 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/BA 2.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/BA 2.jpg', 'The only exercise I knew was sleeping before the weight loss challenge. I\'ve made lifestyle changes: eating smaller quantities, no longer skipping meals, exercising daily, and balancing nutritional contents. I\'ve shrunk from 75kg to 64kg and maintained this for 6 months.', 'Esther Eshiet', 'Lost 11kg, maintained for 6 months', '')">
+            </div>
+            
+            <!-- Transformation Image 3 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/BA 3.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/BA 3.jpg', 'The program was a real eye opener. The classes are really educative. Losing weight doesn\'t have to be stressful - it\'s more about having a lifestyle that can be maintained. For the first time in 5 years, I lost 6.4kg and I\'m not done yet.', 'Faderemi', 'Lost 6.4kg', '')">
+            </div>
+            
+            <!-- Transformation Image 4 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/BA 4.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/BA 4.jpg', 'I have lost about 10kg. I never believed in eating healthy but now I am doing just that. My energy level is off the hook and I never get tired and sleepy anymore during the day. I learnt that eating healthy and being happy is not as difficult as it looks.', 'Chioma Okoli', 'Lost 10kg', '')">
+            </div>
+            
+            <!-- Transformation Image 5 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/BA 5.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/BA 5.jpg', 'I love this program because it is weight loss the right way - natural and teaches one to maintain it. Since July 2014 I haven\'t gained weight. I look 10 years younger, at 65kg now. I don\'t wake up feeling tired and worn out, my bowel habit is far better.', 'Damilola Ife-Adeniyi', 'Maintained weight since 2014', '')">
+            </div>
+            
+            <!-- Transformation Image 6 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/BA 6.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/BA 6.jpg', 'I work in a bank and have two little boys with no house help. I joined with little faith, but after 12 weeks I lost 13kg. I love this program because whenever I\'m getting discouraged, the chats inspire me and the group support system encourages me.', 'Victoria', 'Lost 13kg', '')">
+            </div>
+            
+            <!-- Transformation Image 7 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/BA 7.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/BA 7.jpg', 'In six weeks, I\'ve lost 9kg. It feels like magic. Since I put to birth over a year ago, this is the first time I weigh less than 94kg - I now weigh 89.5kg. This is huge for me.', 'Dimmy Diva', 'Lost 9kg in 6 weeks', '')">
+            </div>
+            
+            <!-- Transformation Image 8 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/BA 8.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/BA 8.jpg', 'QueenIwo is an exceptional wellness coach. Her approach is both personalized and holistic. As someone constantly on the go, her support has helped me develop habits I can maintain even when travelling or working long hours.', 'Bridget Elesin', 'Maxwell Team Member, Marriage & Family Life Practitioner', './assets/images/VIP Testimonial Pictures/Bridget Elesin.jpg')">
+            </div>
+            
+            <!-- Transformation Image 9 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/BA 9.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/BA 9.jpg', 'QueenIwo is one of the best in the field. She has a wealth of knowledge and expertise, and is able to apply this knowledge to help clients achieve their goals. She understands individual needs and creates effective, tailor-made solutions.', 'Ezekiel Solesi', 'CEO Limb Simple (Forbes Council Coach)', './assets/images/VIP Testimonial Pictures/Ezekiel Solesi.jpeg')">
+            </div>
+            
+            <!-- Transformation Image 10 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/BA 10A.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/BA 10A.jpg', 'My experience working with QueenIwo has been truly life-changing, especially during the pandemic. As a C-Suite executive who often put work before health, under her guidance I\'ve been able to prioritize my physical, mental, and emotional health like never before.', 'Modupe Akintola', 'Foreign Affairs Executive', './assets/images/VIP Testimonial Pictures/Modupe Akinola.jpg')">
+            </div>
+            
+            <!-- Transformation Image 11 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/BA 10B.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/BA 10B.jpg', 'QueenIwo is not just a wellness coach; she\'s a beacon of inspiration. Her dedication to helping leaders, professionals, and business owners thrive in mind, body, and spirit is unparalleled.', 'Niyi Adesanya', 'Nigeria\'s No.1 Performance Strategist & Leadership Coach', './assets/images/VIP Testimonial Pictures/Niyi Adesanya.jpeg')">
+            </div>
+            
+            <!-- Transformation Image 12 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/20210423_175325.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/20210423_175325.jpg', 'I started with 106Kg and ended with 83Kg - a loss of 23kg! What I love most is that it can be done in the comfort of your home. The programme presents weight loss as building a healthy lifestyle.', 'Janice Egbudum', 'Lost 23kg', '')">
+            </div>
+            
+            <!-- Transformation Image 13 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/20210423_175522.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/20210423_175522.jpg', 'I lost 7kg and 3 inches around my waistline. I never exercised before, but now I\'m used to at least 20 minutes workout daily. I\'ve also included veggies and fruits in my meals which I never did before.', 'Enitan Rufai', 'Lost 7kg & 3 inches', '')">
+            </div>
+            
+            <!-- Transformation Image 14 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/IMG-20210414-WA0015.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/IMG-20210414-WA0015.jpg', 'The only exercise I knew was sleeping before the weight loss challenge. I\'ve made lifestyle changes: eating smaller quantities, no longer skipping meals, exercising daily, and balancing nutritional contents.', 'Esther Eshiet', 'Lost 11kg, maintained for 6 months', '')">
+            </div>
+            
+            <!-- Transformation Image 15 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/IMG-20210414-WA0030.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/IMG-20210414-WA0030.jpg', 'The program was a real eye opener. The classes are really educative. Losing weight doesn\'t have to be stressful - it\'s more about having a lifestyle that can be maintained.', 'Faderemi', 'Lost 6.4kg', '')">
+            </div>
+            
+            <!-- Transformation Image 16 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/IMG-20210425-WA0031.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/IMG-20210425-WA0031.jpg', 'I have lost about 10kg. I never believed in eating healthy but now I am doing just that. My energy level is off the hook and I never get tired and sleepy anymore during the day.', 'Chioma Okoli', 'Lost 10kg', '')">
+            </div>
+            
+            <!-- Transformation Image 17 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/IMG-20210505-WA0009.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/IMG-20210505-WA0009.jpg', 'I love this program because it is weight loss the right way - natural and teaches one to maintain it. Since July 2014 I haven\'t gained weight. I look 10 years younger, at 65kg now.', 'Damilola Ife-Adeniyi', 'Maintained weight since 2014', '')">
+            </div>
+            
+            <!-- Transformation Image 18 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/IMG-20210505-WA0011.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/IMG-20210505-WA0011.jpg', 'I work in a bank and have two little boys with no house help. I joined with little faith, but after 12 weeks I lost 13kg. I love this program because whenever I\'m getting discouraged, the chats inspire me.', 'Victoria', 'Lost 13kg', '')">
+            </div>
+            
+            <!-- Transformation Image 19 -->
+            <div class="group overflow-hidden rounded-xl transition-all duration-300 mb-6 md:mb-8 masonry-item">
+              <img class="h-auto w-full rounded-xl object-cover group-hover:scale-105 transition-transform duration-300" src="./assets/images/Picture Transformation/IMG-20210527-WA0014.jpg" alt="Transformation Story"'./assets/images/Picture Transformation/IMG-20210527-WA0014.jpg', 'In six weeks, I\'ve lost 9kg. It feels like magic. Since I put to birth over a year ago, this is the first time I weigh less than 94kg - I now weigh 89.5kg. This is huge for me.', 'Dimmy Diva', 'Lost 9kg in 6 weeks', '')">
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Review Modal -->
+      <div id="reviewModal" class="review-modal">
+        <div class="review-modal-content">
+          <span class="review-modal-close" onclick="closeReviewModal()">&times;</span>
+          <img id="modalImage" class="review-image" src="" alt="Transformation">
+          <p id="modalReview" class="review-text"></p>
+          <div class="review-author">
+            <img id="modalAvatar" class="review-author-avatar" src="" alt="Author" style="display: none;">
+            <div class="review-author-info">
+              <h4 id="modalName"></h4>
+              <p id="modalTitle"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer">
+
+    <div class="section footer-top bg-dark has-bg-image" style="background-image: url('./assets/images/footer-bg.png')">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="index.html" class="logo">
+            <ion-icon name="barbell-sharp" aria-hidden="true"></ion-icon>
+            <span class="span">Fit & Fab Alive</span>
+          </a>
+
+          <p class="footer-brand-text">
+            Empowering Christian leaders and professionals to embrace holistic wellness as a lifestyle of stewardship—nurturing body, mind, and spirit to live fully, lead wisely, and fulfill divine purpose.
+          </p>
+
+          <div class="wrapper">
+
+            <img src="./assets/images/footer-clock.png" width="34" height="34" loading="lazy" alt="Clock">
+
+            <ul class="footer-brand-list">
+
+              <li>
+                <p class="footer-brand-title">Monday - Friday</p>
+                <p>7:00Am - 10:00Pm</p>
+              </li>
+
+              <li>
+                <p class="footer-brand-title">Saturday - Sunday</p>
+                <p>7:00Am - 2:00Pm</p>
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title has-before">Our Links</p>
+          </li>
+
+          <li>
+            <a href="index.html" class="footer-link">Home</a>
+          </li>
+
+          <li>
+            <a href="about.html" class="footer-link">About Us</a>
+          </li>
+
+          <li>
+            <a href="gallery.html" class="footer-link">Gallery</a>
+          </li>
+
+          <li>
+            <a href="free-resources.html" class="footer-link">Free free-resources</a>
+          </li>
+
+       
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title has-before">Contact Us</p>
+          </li>
+
+          <li class="footer-list-item">
+            <div class="icon">
+              <ion-icon name="mail" aria-hidden="true"></ion-icon>
+            </div>
+
+            <div>
+              <a href="mailto:fitfabandalive@gmail.com" class="footer-link">fitfabandalive@gmail.com</a>
+            </div>
+          </li>
+
+          <li class="footer-list-item">
+            <div class="icon">
+              <ion-icon name="logo-youtube" aria-hidden="true"></ion-icon>
+            </div>
+
+            <div>
+              <a href="https://www.youtube.com/@FitFabAndAlive" target="_blank" rel="noopener noreferrer" class="footer-link">YouTube Channel</a>
+            </div>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <p class="footer-list-title has-before">Our Newsletter</p>
+          </li>
+
+          <li>
+            <form action="" class="footer-form">
+              <input type="email" name="email_address" aria-label="email" placeholder="Email Address" required
+                class="input-field">
+
+              <button type="submit" class="btn btn-primary" aria-label="Submit">
+                <ion-icon name="chevron-forward-sharp" aria-hidden="true"></ion-icon>
+              </button>
+            </form>
+          </li>
+
+          <li>
+            <ul class="social-list">
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-facebook"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="#" class="social-link">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+              </li>
+
+              <li>
+                <a href="https://www.youtube.com/@FitFabAndAlive" target="_blank" rel="noopener noreferrer" class="social-link">
+                  <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+              </li>
+
+            </ul>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+   
+
+  </footer>
+
+  <!-- 
+    - #BACK TO TOP
+  -->
+
+  <a href="#top" class="back-top-btn" aria-label="back to top" data-back-top-btn>
+    <ion-icon name="caret-up-sharp" aria-hidden="true"></ion-icon>
+  </a>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js" defer></script>
+  
+  <!-- 
+    - Review Modal Script
+  -->
+  <script>
+    function openReviewModal(imageSrc, reviewText, authorName, authorTitle, avatarSrc) {
+      const modal = document.getElementById('reviewModal');
+      const modalImage = document.getElementById('modalImage');
+      const modalReview = document.getElementById('modalReview');
+      const modalName = document.getElementById('modalName');
+      const modalTitle = document.getElementById('modalTitle');
+      const modalAvatar = document.getElementById('modalAvatar');
+      
+      modalImage.src = imageSrc;
+      modalReview.textContent = reviewText;
+      modalName.textContent = authorName;
+      modalTitle.textContent = authorTitle;
+      
+      if (avatarSrc && avatarSrc !== '') {
+        modalAvatar.src = avatarSrc;
+        modalAvatar.style.display = 'block';
+      } else {
+        modalAvatar.style.display = 'none';
+      }
+      
+      modal.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
+    
+    function closeReviewModal() {
+      const modal = document.getElementById('reviewModal');
+      modal.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+    
+    // Alias for openImageModal to maintain compatibility
+    function openImageModal(imageSrc, reviewText, authorName, authorTitle, avatarSrc) {
+      openReviewModal(imageSrc, reviewText, authorName, authorTitle, avatarSrc);
+    }
+    
+    // Close modal when clicking outside of it
+    window.onclick = function(event) {
+      const modal = document.getElementById('reviewModal');
+      if (event.target == modal) {
+        closeReviewModal();
+      }
+    }
+    
+    // Close modal with Escape key
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape') {
+        closeReviewModal();
+      }
+    });
+  </script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
+
