@@ -446,7 +446,8 @@ body {
 
 .navbar-link {
   font-family: var(--ff-catamaran);
-  font-size: var(--fs-4);
+  font-size: 2.8rem;
+  font-weight: var(--fw-800);
   text-align: center;
   padding-block: 10px;
   margin-block-end: 20px;
@@ -467,7 +468,6 @@ body {
   color: var(--cadet-gray);
   text-align: center;
   padding-block: 0;
-  padding-block-start: 80px;
   overflow: hidden;
 }
 
@@ -530,6 +530,34 @@ body {
 
 .hero .abs-img-2 { animation-direction: alternate-reverse; }
 
+/* Mobile-specific margin-top for hero section to prevent navbar overlap */
+@media (max-width: 767px) {
+  .hero {
+    margin-block-start: 70px;
+  }
+  
+  /* Hero sections on non-home pages: show orange bg instead of dark on mobile */
+  /* Target all hero.bg-dark and change to orange */
+  .hero.bg-dark {
+    background-color: var(--coquelicot);
+  }
+  
+  /* Override: home page hero stays dark (has hero-banner child) */
+  .hero.bg-dark:has(.hero-banner) {
+    background-color: var(--rich-black-fogra-29-1);
+  }
+  
+  /* Hero subtitle at start (left-aligned) on mobile for pages aside from homepage */
+  .hero-subtitle {
+    margin-inline: 0;
+    margin-inline-start: 0;
+  }
+  
+  /* Keep centered for homepage hero (has hero-banner child) */
+  .hero:has(.hero-banner) .hero-subtitle {
+    margin-inline: auto;
+  }
+}
 
 
 
