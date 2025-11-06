@@ -467,6 +467,7 @@ body {
   color: var(--cadet-gray);
   text-align: center;
   padding-block: 0;
+  padding-block-start: 80px;
   overflow: hidden;
 }
 
@@ -1273,6 +1274,7 @@ body {
   .hero {
     background-size: contain;
     text-align: left;
+    padding-block-start: 0;
   }
 
   .hero::before {
@@ -2277,6 +2279,14 @@ body {
   transition: var(--transition-2);
   box-shadow: var(--shadow-1);
   min-height: 180px;
+}
+
+/* Override inline grid positioning on mobile only */
+@media (max-width: 767px) {
+  .bento-item {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
 }
 
 .bento-item:hover {
