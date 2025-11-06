@@ -101,7 +101,33 @@
       -->
 
       <section class="section hero bg-dark has-after has-bg-image" id="home" aria-label="hero" data-section
-        style="background-image: url('./assets/images/hero-bg.png');">
+        style="background-image: url('./assets/images/hero-bg.png'); padding-top: 120px;">
+        <style>
+          @media (max-width: 767px) {
+            #home .hero-buttons-wrapper {
+              display: flex !important;
+              flex-direction: column !important;
+              gap: 15px !important;
+              width: 100% !important;
+            }
+            #home .hero-buttons-wrapper .btn {
+              width: 100% !important;
+              text-align: left !important;
+              justify-content: flex-start !important;
+              display: flex !important;
+              align-items: center !important;
+            }
+            #home .hero-buttons-wrapper .btn-primary {
+              background-color: var(--white) !important;
+              color: var(--coquelicot) !important;
+            }
+            #home .hero-buttons-wrapper .btn-secondary {
+              background-color: var(--white) !important;
+              color: var(--coquelicot) !important;
+              border: 2px solid var(--white) !important;
+            }
+          }
+        </style>
         <div class="container">
 
           <div class="hero-content" style="max-width: 100%; text-align: start;">
@@ -117,7 +143,7 @@
             </p>
 
 
-            <div style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; margin-bottom: 40px;">
+            <div class="hero-buttons-wrapper" style="display: flex; flex-wrap: wrap; gap: 15px; justify-content: flex-start; margin-bottom: 40px;">
               <a href="https://wa.me/2348023226519" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Schedule a Consultation</a>
               <a href="#brochure" class="btn btn-secondary" style="background: transparent; border: 2px solid var(--coquelicot); color: var(--coquelicot);">Download Brochure</a>
             </div>
