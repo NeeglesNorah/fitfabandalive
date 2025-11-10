@@ -23,7 +23,7 @@
   --rich-black-fogra-29_50: hsl(210, 26%, 11%, 0.5);
   --rich-black-fogra-29-1: hsl(210, 26%, 11%);
   --rich-black-fogra-29-2: hsl(210, 50%, 4%);
-  --silver-metallic: hsl(212, 9%, 67%);
+  --silver-metallic: hsl(0, 0%, 100%);
   --coquelicot_20: rgba(245, 130, 32, 0.2);
   --coquelicot_10: rgba(245, 130, 32, 0.1);
   --sonic-silver: hsl(0, 0%, 47%);
@@ -171,8 +171,8 @@ body {
 .section { padding-block: var(--section-padding); }
 
 .bg-dark {
-  background-color: var(--rich-black-fogra-29-1);
-  color: var(--silver-metallic);
+  background-color: #83AE01;
+  color: var(--white);
 }
 
 .has-bg-image {
@@ -529,6 +529,52 @@ body {
 }
 
 .hero .abs-img-2 { animation-direction: alternate-reverse; }
+
+.hero-light {
+  background-color: var(--white);
+  color: #000;
+}
+
+.hero-light .h1,
+.hero-light .hero-title {
+  color: #000;
+}
+
+.hero-light .section-text {
+  color: #000;
+}
+
+.hero-light .hero-subtitle {
+  background-color: rgba(0, 0, 0, 0.08);
+  color: #000;
+}
+
+.hero-light .hero-subtitle .strong {
+  background-color: var(--coquelicot);
+  color: var(--white);
+}
+
+.hero-light::after {
+  top: 0;
+  bottom: auto;
+  left: auto;
+  right: 0;
+  width: clamp(220px, 55%, 360px);
+  height: 100%;
+  background-color: var(--coquelicot);
+  border-top-left-radius: 180px;
+  border-bottom-left-radius: 180px;
+}
+
+@media (max-width: 767px) {
+  .hero-light::after {
+    height: 80%;
+    bottom: -40px;
+    top: auto;
+    border-bottom-left-radius: 120px;
+    border-top-left-radius: 120px;
+  }
+}
 
 /* Mobile-specific margin-top for hero section to prevent navbar overlap */
 @media (max-width: 767px) {
@@ -1260,7 +1306,7 @@ body {
 
   .header .container { gap: 30px; }
 
-  .header .logo { color: var(--white); }
+  .header .logo { color: var(--rich-black-fogra-29-1); }
 
   .header.active .logo { color: var(--rich-black-fogra-29-1); }
 
@@ -1276,7 +1322,7 @@ body {
   }
 
   .navbar-link {
-    color: var(--white);
+    color: var(--rich-black-fogra-29-1);
     font-size: unset;
     padding: 0 10px;
     margin-block-end: 0;
@@ -1724,7 +1770,7 @@ body {
 }
 
 .credential-info .section-text {
-  color: var(--silver-metallic);
+  color: var(--white);
   margin: 0;
   font-size: var(--fs-6);
 }
@@ -2127,7 +2173,7 @@ body {
 }
 
 .value-item .section-text {
-  color: var(--silver-metallic);
+  color: var(--white);
 }
 
 .mission-box {
